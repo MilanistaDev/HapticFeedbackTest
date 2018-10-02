@@ -85,11 +85,20 @@ final class ViewController: UIViewController {
         switch self.statusSegmentedControl.selectedSegmentIndex {
         case 0:
             self.feedbackGenerator?.notificationOccurred(.success)
+            self.statusLabel.text = "Success"
+            self.statusBarPartView.backgroundColor = .green
         case 1:
             self.feedbackGenerator?.notificationOccurred(.error)
+            self.statusLabel.text = "Failure"
+            self.statusBarPartView.backgroundColor = .red
         default:
             break
         }
+        self.statusBarPartView.isHidden = false
+        UIView.animate(withDuration: 1.5, delay: 1.0, options: .curveEaseInOut,
+                       animations: {
+                        self.statusBarPartView.isHidden = true
+        }, completion: nil)
     }
 }
 
