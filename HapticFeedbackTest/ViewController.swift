@@ -29,6 +29,13 @@ final class ViewController: UIViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.textChanged(notification:)),
                                                name: UITextView.textDidChangeNotification, object: nil)
+        self.feedbackGenerator = UINotificationFeedbackGenerator()
+        self.feedbackGenerator?.prepare()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.feedbackGenerator = nil
     }
 
     deinit {
@@ -69,10 +76,19 @@ final class ViewController: UIViewController {
         // 8 characters: Warning, 10 Characters: Failure, 12 Characters: Failure again
         if self.textView.text.count == 8 {
             self.feedbackGenerator?.notificationOccurred(.warning)
-            self.feedbackGenerator?.prepare()
         } else if self.textView.text.count == 10 || self.textView.text.count == 12 {
             self.feedbackGenerator?.notificationOccurred(.error)
-            self.feedbackGenerator?.prepare()
+        }
+    }
+
+    @IBAction func sendAction(_ sender: Any) {
+        switch self.statusSegmentedControl.selectedSegmentIndex {
+        case 0:
+            self.feedbackGenerator?.notificationOccurred(.success)
+        case 1:
+            self.feedbackGenerator?.notificationOccurred(.error)
+        default:
+            break
         }
     }
 }
@@ -84,14 +100,5 @@ extension ViewController: UITextViewDelegate {
             return false
         }
         return true
-    }
-
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        self.feedbackGenerator = UINotificationFeedbackGenerator()
-        self.feedbackGenerator?.prepare()
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        self.feedbackGenerator = nil
     }
 }
