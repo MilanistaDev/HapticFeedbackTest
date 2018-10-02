@@ -18,6 +18,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusBarPartView: UIView!
 
+    var feedbackGenerator : UINotificationFeedbackGenerator? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpUI()
@@ -53,12 +55,24 @@ final class ViewController: UIViewController {
     func textChanged(notification: Notification) {
         self.currentCountLabel.text = String(self.textView.text.count)
         self.sendButton.isEnabled = self.textView.text.count > 0 && self.textView.text.count < 11
+
+        // textColor assistance
+        // 8-10 characters: Orange, 11 over: Red, Others: Black
         if self.textView.text.count > 10 {
             self.currentCountLabel.textColor = .red
         } else if self.textView.text.count > 7 && self.textView.text.count <= 10 {
             self.currentCountLabel.textColor = .orange
         } else {
             self.currentCountLabel.textColor = .black
+        }
+
+        // 8 characters: Warning, 10 Characters: Failure, 12 Characters: Failure again
+        if self.textView.text.count == 8 {
+            self.feedbackGenerator?.notificationOccurred(.warning)
+            self.feedbackGenerator?.prepare()
+        } else if self.textView.text.count == 10 || self.textView.text.count == 12 {
+            self.feedbackGenerator?.notificationOccurred(.error)
+            self.feedbackGenerator?.prepare()
         }
     }
 }
@@ -70,5 +84,14 @@ extension ViewController: UITextViewDelegate {
             return false
         }
         return true
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.feedbackGenerator = UINotificationFeedbackGenerator()
+        self.feedbackGenerator?.prepare()
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.feedbackGenerator = nil
     }
 }
