@@ -48,6 +48,9 @@ final class ViewController: UIViewController {
         } else {
             self.topLayoutConstraint.constant = -64.0
         }
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
+                                                                        NSAttributedString.Key.font : UIFont(name: "Futura-Medium", size: 18.0)!]
+        self.statusSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "Futura-Medium", size: 14.0)!], for: .normal)
         self.statusBarPartView.isHidden = true
         self.textView.delegate = self
         self.textView.text = ""
