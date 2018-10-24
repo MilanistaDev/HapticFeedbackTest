@@ -39,7 +39,9 @@ final class ViewController: UIViewController {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UITextView.textDidChangeNotification,
+                                                  object: nil)
     }
 
     fileprivate func setUpUI() {
@@ -94,6 +96,16 @@ final class ViewController: UIViewController {
             self.feedbackGenerator?.notificationOccurred(.error)
             self.statusLabel.text = "Failure"
             self.statusBarPartView.backgroundColor = .red
+            UIView.animate(withDuration: 1.0,
+                           delay: 0.0,
+                           usingSpringWithDamping: 0.1,
+                           initialSpringVelocity: 0.0,
+                           options: [],
+                           animations: {
+                            self.sendButton.center.x += 5.0
+            }) { (_) in
+                self.sendButton.center.x -= 5.0
+            }
         default:
             break
         }

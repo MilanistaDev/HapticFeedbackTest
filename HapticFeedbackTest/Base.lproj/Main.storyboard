@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VwY-MS-MZe">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="VwY-MS-MZe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dZZ-q8-ona">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.30267238619999998" green="0.66678375010000002" blue="0.65887558459999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
@@ -35,47 +35,49 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HapticFeedbackTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SP-HR-Kt2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl0-lI-frR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-bM-n2M">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaD-UD-PC2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-fd-YTv">
-                                                                <rect key="frame" x="30" y="30" width="315" height="40"/>
+                                                                <rect key="frame" x="30" y="30" width="260" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="99S-eH-CNk"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                             </textView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 10 Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-CK-TiC">
-                                                                <rect key="frame" x="243.5" y="82" width="101.5" height="34"/>
+                                                                <rect key="frame" x="188.5" y="82" width="101.5" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="fDr-nO-UYq"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR4-F4-D6i">
-                                                                <rect key="frame" x="219" y="90" width="16.5" height="18.5"/>
+                                                                <rect key="frame" x="164" y="83" width="16.5" height="18.5"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-Ne-3PS">
-                                                                <rect key="frame" x="235" y="136" width="90" height="44"/>
+                                                                <rect key="frame" x="203" y="126" width="82" height="44"/>
                                                                 <color key="backgroundColor" red="0.30267238619999998" green="0.66678375010000002" blue="0.65887558459999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="LOo-4b-fnU"/>
                                                                     <constraint firstAttribute="height" constant="44" id="N3y-b3-Hgt"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
@@ -86,7 +88,11 @@
                                                                 </connections>
                                                             </button>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7lh-9J-Ibe">
-                                                                <rect key="frame" x="50" y="144" width="131" height="29"/>
+                                                                <rect key="frame" x="40" y="133" width="131" height="31"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="tLh-Kg-3H7"/>
+                                                                    <constraint firstAttribute="width" constant="131" id="xw3-Bw-ZJY"/>
+                                                                </constraints>
                                                                 <segments>
                                                                     <segment title="Success"/>
                                                                     <segment title="Failure"/>
@@ -98,23 +104,25 @@
                                                         <constraints>
                                                             <constraint firstItem="gHk-CK-TiC" firstAttribute="trailing" secondItem="BhW-fd-YTv" secondAttribute="trailing" id="2uU-Cd-U1L"/>
                                                             <constraint firstItem="BhW-fd-YTv" firstAttribute="leading" secondItem="ZaD-UD-PC2" secondAttribute="leading" constant="30" id="5G4-E7-hKd"/>
+                                                            <constraint firstItem="cR4-F4-D6i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZaD-UD-PC2" secondAttribute="leading" constant="20" symbolic="YES" id="70H-zr-Xya"/>
                                                             <constraint firstItem="gHk-CK-TiC" firstAttribute="top" secondItem="BhW-fd-YTv" secondAttribute="bottom" constant="12" id="Ejb-i0-Pml"/>
-                                                            <constraint firstItem="7lh-9J-Ibe" firstAttribute="leading" secondItem="BhW-fd-YTv" secondAttribute="leading" constant="20" id="GNg-Ya-bNT"/>
-                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="centerY" secondItem="7lh-9J-Ibe" secondAttribute="centerY" id="KPH-lZ-6hN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="kYy-Ne-3PS" secondAttribute="bottom" constant="30" id="LEq-BY-6oz"/>
+                                                            <constraint firstItem="7lh-9J-Ibe" firstAttribute="leading" secondItem="ZaD-UD-PC2" secondAttribute="leading" constant="40" id="F02-TO-1nK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="kYy-Ne-3PS" secondAttribute="bottom" constant="32" id="J9m-Ug-k3a"/>
+                                                            <constraint firstItem="gHk-CK-TiC" firstAttribute="centerY" secondItem="cR4-F4-D6i" secondAttribute="centerY" id="T2d-cl-YNI"/>
                                                             <constraint firstAttribute="trailing" secondItem="BhW-fd-YTv" secondAttribute="trailing" constant="30" id="ZVK-vW-1yW"/>
-                                                            <constraint firstItem="gHk-CK-TiC" firstAttribute="centerY" secondItem="cR4-F4-D6i" secondAttribute="centerY" id="bs7-5f-0x0"/>
-                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="trailing" secondItem="BhW-fd-YTv" secondAttribute="trailing" constant="-20" id="cEx-N2-gnA"/>
-                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="top" secondItem="gHk-CK-TiC" secondAttribute="bottom" constant="20" id="ce7-9B-ZSw"/>
                                                             <constraint firstItem="BhW-fd-YTv" firstAttribute="top" secondItem="ZaD-UD-PC2" secondAttribute="top" constant="30" id="hnT-Os-o4N"/>
+                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="trailing" secondItem="BhW-fd-YTv" secondAttribute="trailing" constant="-5" id="lsG-gZ-5FU"/>
                                                             <constraint firstItem="gHk-CK-TiC" firstAttribute="leading" secondItem="cR4-F4-D6i" secondAttribute="trailing" constant="8" id="o4s-qZ-lT6"/>
+                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="leading" secondItem="7lh-9J-Ibe" secondAttribute="trailing" constant="32" id="pth-df-9OC"/>
+                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="centerY" secondItem="7lh-9J-Ibe" secondAttribute="centerY" id="wq6-cI-MDA"/>
+                                                            <constraint firstItem="kYy-Ne-3PS" firstAttribute="top" secondItem="gHk-CK-TiC" secondAttribute="bottom" constant="24" id="xhw-Bh-bee"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-QQ-0u5">
-                                                        <rect key="frame" x="0.0" y="210" width="375" height="30"/>
+                                                        <rect key="frame" x="0.0" y="202" width="320" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-gu-UNz">
-                                                                <rect key="frame" x="154" y="4" width="67.5" height="22.5"/>
+                                                                <rect key="frame" x="126.5" y="4" width="67.5" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -179,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="135" y="133.09859154929578"/>
         </scene>
     </scenes>
 </document>
